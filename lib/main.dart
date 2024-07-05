@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:voice_assistant_chatgpt/home_page.dart';
+import 'package:voice_assistant_chatgpt/pallete.dart';
 
 void main() {
   runApp(const MyApp());
@@ -6,19 +8,19 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'ChatMe',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const Scaffold(
-        body: Center(
-          child: Text('Waiting for your Message'),
+      debugShowCheckedModeBanner: false,
+      title: 'Jarvis',
+      theme: ThemeData.light(useMaterial3: true).copyWith(
+        scaffoldBackgroundColor: Pallete.whiteColor,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Pallete.whiteColor,
         ),
       ),
+      home: const HomePage(),
     );
   }
 }
